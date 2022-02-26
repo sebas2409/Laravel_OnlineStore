@@ -24,7 +24,9 @@
                 <a class="nav-link active" href="{{ route('home.about') }}">About</a>
                 @guest
                     <a class="nav-link active" href="{{ route('login') }}">Login</a>
-                    <a class="nav-link active" href="{{ route('register') }}">Register</a> @else
+                    <a class="nav-link active" href="{{ route('register') }}">Register</a>
+                @else
+                    <a class="nav-link active" href="{{ route('myaccount.orders') }}">My orders</a>
                     <form id="logout" action="{{ route('logout') }}" method="POST">
                         <a role="button" class="nav-link active" onclick="document.getElementById('logout').submit();">Logout</a>
                         @csrf </form>

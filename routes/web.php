@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\AdminProductController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MyAccountController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,7 @@ Route::middleware('admin')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', [CartController::class,'purchase'])->name('cart.purchase');
+    Route::get('/my-account-orders', [MyAccountController::class,'orders'])->name('myaccount.orders');
 });
 
 
