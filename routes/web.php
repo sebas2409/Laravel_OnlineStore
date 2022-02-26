@@ -29,5 +29,9 @@ Route::middleware('admin')->group(function () {
     Route::put('/admin/product/{id}/update', [AdminProductController::class,'update'])->name('admin.product.update');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/cart/purchase', [CartController::class,'purchase'])->name('cart.purchase');
+});
+
 
 Auth::routes();
